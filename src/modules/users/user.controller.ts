@@ -8,16 +8,17 @@ export class UserController {
 
   // private userService = new UserService();
   constructor(private userService: UserService) {}
+  
+  @Post()
+  public create(@Body() users: User): User {
+       const userCreated = this.userService.create(users);
+       return userCreated;
+  }
 
   @Get(':username')
   public searchByUsername(@Param('username') username: string): User {
        const userFound = this.userService.searchByUsername(username);
        return userFound;
   }
-
-  @Post()
-  public create(@Body() users: User): User {
-       const userCreated = this.userService.create(users);
-       return userCreated;
-  }
+  
 }

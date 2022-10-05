@@ -10,10 +10,11 @@ export class UserService {
     username: "Gab",
     email: "gab@email.com",
     password: "23423tw",
-    full_name: "Gab Silva",
+    last_name: "Gab Silva",
     created_at: new Date()
   }];
 
+  
   public create(users: User): User {
     this.users.push(users);
 
